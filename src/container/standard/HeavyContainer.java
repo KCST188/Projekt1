@@ -2,9 +2,7 @@ package container.standard;
 
 import sender.Sender;
 
-import java.util.List;
-
-public class HeavyContainer extends StandardContainer{
+public class HeavyContainer extends StandardContainer {
     public String containerMaterial;
     private Boolean isHeavy = true;
 
@@ -14,7 +12,7 @@ public class HeavyContainer extends StandardContainer{
         this.containerMaterial = scanner.nextLine();
     }
 
-    public String toString(){
+    public String toString() {
         return "Id: " + id + "\nSender: " + sender.toString() + "Weight Netto: " + weightNetto + "\nWeight Brutto: " + weightBrutto
                 + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLenght: " + lenght + "\nWidth: " + width
                 + "\nHeight: " + height + "\nContainer material: " + containerMaterial;

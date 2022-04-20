@@ -28,39 +28,39 @@ public class Main {
         Sender sender2 = new Sender("Andy", "Jones", pesel2, "Gdansk");
 
 
-        while(true){
-                System.out.println("1. Create ship");
-                System.out.println("2. Create Standard container");
-                System.out.println("3. Create Heavy container");
-                System.out.println("4. Create Cooling container");
-                System.out.println("5. Create container with liquid");
-                System.out.println("6. Create container with toxic liquid");
-                System.out.println("7. Create container with toxic granular");
-                System.out.println("8. Create container with explosives");
-                System.out.println("9. List of ships");
-                System.out.println("10. List of containers in magazine");
-                System.out.println("11. List of containers on ship");
-                System.out.println("12. Load container on ship");
-                System.out.println("13. Unload container from ship");
-                System.out.println("14. Unload container from ship");
-                System.out.println("15. Exit");
-                int userChoice = scanner.nextInt();
-                switch (userChoice){
-                    case 1 -> shipCount.addShip();
-                    case 2 -> magazine.addContainer(new StandardContainer(sender));
-                    case 3 -> magazine.addContainer(new HeavyContainer(sender));
-                    case 4 -> magazine.addContainer(new CoolingContainer(sender2));
-                    case 5 -> magazine.addContainer(new LiquidsContainer(sender));
-                    case 6 -> magazine.addContainer(new ToxicLiquidContainer(sender2));
-                    case 7 -> magazine.addContainer(new ToxicGranularContainer(sender2));
-                    case 8 -> magazine.addContainer(new ExplosivesContainer(sender2));
-                    case 9 -> shipCount.displayShips();
-                    case 10 -> magazine.getListOfContainersInMagazine();
-                    case 11 -> shipCount.getListOfContainersOnShip();
-                    case 12 -> magazine.loadOnShip(shipCount);
-                    case 13 -> magazine.unloadFromShip(shipCount);
-                    case 14 -> magazine.manuallyUtilizeContainer();
-                    case 15 -> System.exit(0);
+        while (true) {
+            System.out.println("1. Create ship");
+            System.out.println("2. Create Standard container");
+            System.out.println("3. Create Heavy container");
+            System.out.println("4. Create Cooling container");
+            System.out.println("5. Create container with liquid");
+            System.out.println("6. Create container with toxic liquid");
+            System.out.println("7. Create container with toxic granular");
+            System.out.println("8. Create container with explosives");
+            System.out.println("9. List of ships");
+            System.out.println("10. List of containers in magazine");
+            System.out.println("11. List of containers on ship");
+            System.out.println("12. Load container on ship");
+            System.out.println("13. Unload container from ship");
+            System.out.println("14. Unload container from ship");
+            System.out.println("15. Exit");
+            int userChoice = scanner.nextInt();
+            switch (userChoice) {
+                case 1 -> shipCount.addShip();
+                case 2 -> magazine.addContainer(new StandardContainer(sender));
+                case 3 -> magazine.addContainer(new HeavyContainer(sender));
+                case 4 -> magazine.addContainer(new CoolingContainer(sender2));
+                case 5 -> magazine.addContainer(new LiquidsContainer(sender));
+                case 6 -> magazine.addContainer(new ToxicLiquidContainer(sender2));
+                case 7 -> magazine.addContainer(new ToxicGranularContainer(sender2));
+                case 8 -> magazine.addContainer(new ExplosivesContainer(sender2));
+                case 9 -> shipCount.displayShips();
+                case 10 -> magazine.getListOfContainersInMagazine();
+                case 11 -> shipCount.getListOfContainersOnShip();
+                case 12 -> magazine.loadOnShip(shipCount);
+                case 13 -> magazine.unloadFromShip(shipCount);
+                case 14 -> magazine.manuallyUtilizeContainer();
+                case 15 -> System.exit(0);
             }
         }
     }

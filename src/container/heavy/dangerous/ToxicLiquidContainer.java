@@ -4,7 +4,7 @@ import container.LiquidContainerInerface;
 import sender.Sender;
 
 public class ToxicLiquidContainer extends DangerousContainer implements LiquidContainerInerface {
-    private int temperatureOfLiquid;
+    public int temperatureOfLiquid;
     public String internalMaterial;
     public Boolean isToxicLiquid = true;
 
@@ -16,7 +16,7 @@ public class ToxicLiquidContainer extends DangerousContainer implements LiquidCo
         this.internalMaterial = scanner.nextLine();
     }
 
-    public String toString(){
+    public String toString() {
         return "Id: " + id + "\nSender: " + sender.toString() + "Weight Netto: " + weightNetto + "\nWeight Brutto: " + weightBrutto
                 + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLenght: " + lenght + "\nWidth: " + width
                 + "\nHeight: " + height + "\nContainer material: " + containerMaterial + "\nTemperature of liquid: " + temperatureOfLiquid

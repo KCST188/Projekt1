@@ -38,7 +38,7 @@ public abstract class Container implements Serializable {
     }
 
 
-    public String toString(){
+    public String toString() {
         return "Id: " + id + "\nSender: " + sender.toString() + "Weight Netto: " + weightNetto + "\nWeight Brutto" + weightBrutto
                 + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine;
     }

@@ -29,19 +29,20 @@ public class Sender implements Serializable {
         month += pesel[3];
         year = 10 * pesel[0];
         year += pesel[1];
-        if(year > 4) year += 1900;
+        if (year > 4) year += 1900;
         else year += 2000;
         return LocalDate.of(year, month, day);
     }
 
-    public void getBanned(){
+    public void getBanned() {
         banned = true;
     }
-    public void getWarning(){
-        warning ++;
+
+    public void getWarning() {
+        warning++;
     }
 
-    public String toString(){
+    public String toString() {
         return "(Name: " + name + "\nSurname: " + surname + "\nAddress: " + address + "\nDate of birth: " + dateOfBirth() + ")\n";
     }
 }

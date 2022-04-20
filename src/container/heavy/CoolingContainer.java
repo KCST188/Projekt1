@@ -3,8 +3,6 @@ package container.heavy;
 import container.standard.HeavyContainer;
 import sender.Sender;
 
-import java.util.List;
-
 public class CoolingContainer extends HeavyContainer {
     public int temperatureInside;
     public int voltage;
@@ -18,7 +16,7 @@ public class CoolingContainer extends HeavyContainer {
         this.voltage = Integer.parseInt(scanner.nextLine());
     }
 
-    public String toString(){
+    public String toString() {
         return "Id: " + id + "\nSender: " + sender.toString() + "Weight Netto: " + weightNetto + "\nWeight Brutto: " + weightBrutto
                 + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLenght: " + lenght + "\nWidth: " + width
                 + "\nHeight: " + height + "\nContainer material: " + containerMaterial + "\nTemperature inside: " + temperatureInside

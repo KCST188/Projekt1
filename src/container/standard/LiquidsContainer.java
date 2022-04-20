@@ -3,11 +3,8 @@ package container.standard;
 import container.LiquidContainerInerface;
 import sender.Sender;
 
-import java.util.Scanner;
-
 public class LiquidsContainer extends StandardContainer implements LiquidContainerInerface {
     public int maxPressure;
-
 
 
     public LiquidsContainer(Sender sender) {
@@ -18,7 +15,7 @@ public class LiquidsContainer extends StandardContainer implements LiquidContain
     }
 
 
-    public String toString(){
+    public String toString() {
         return "Id: " + id + "\nSender: " + sender.toString() + "Weight Netto: " + weightNetto + "\nWeight Brutto: " + weightBrutto
                 + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLenght: " + lenght + "\nWidth: " + width
                 + "\nHeight: " + height + "\nMax pressure: " + maxPressure + "\nExternal material: " + externalMaterial;

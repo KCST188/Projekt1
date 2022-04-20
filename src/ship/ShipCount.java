@@ -10,18 +10,18 @@ public class ShipCount implements Serializable {
     public ArrayList<Ship> ships = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
 
-    public Ship findShipById(){
+    public Ship findShipById() {
         System.out.println("Write ship id");
         int id = Integer.parseInt(scanner.nextLine());
-        for (Ship ship: ships) {
-            if(ship.shipId == id) return ship;
+        for (Ship ship : ships) {
+            if (ship.shipId == id) return ship;
         }
         return null;
     }
 
-    public void getListOfContainersOnShip(){
+    public void getListOfContainersOnShip() {
         Ship ship = findShipById();
-        if(ship == null) System.out.println("Ship don't exist");
+        if (ship == null) System.out.println("Ship don't exist");
         else {
             for (Container container : ship.containerList) {
                 System.out.println(container.toString());
@@ -29,7 +29,7 @@ public class ShipCount implements Serializable {
         }
     }
 
-    public void addShip(){
+    public void addShip() {
         System.out.println("Write max number of dangerous containers");
         int maxDangerous = Integer.parseInt(scanner.nextLine());
 
@@ -61,8 +61,8 @@ public class ShipCount implements Serializable {
         ships.add(ship);
     }
 
-    public void displayShips(){
-        for (Ship ship: ships) {
+    public void displayShips() {
+        for (Ship ship : ships) {
             System.out.println(ship.toString());
         }
     }

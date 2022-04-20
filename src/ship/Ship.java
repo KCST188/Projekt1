@@ -37,7 +37,7 @@ public class Ship implements Serializable {
         this.shipId = ThreadLocalRandom.current().nextInt(1, 100000 + 1);
     }
 
-    public String toString(){
+    public String toString() {
         return "Id: " + shipId + "\nMax Dangerous: " + maxDangerous + "\nMax Heavy: " + maxHeavy + "\nMaxElectric: "
                 + maxElectric + "\nMax All: " + maxAll + "\nDangerous containers: " + dangerousAmount + "\nHeavy containers: "
                 + heavyAmount + "\nElectric containers: " + electricAmount + "\nName: " + name + "\nHome Port" + homePort
