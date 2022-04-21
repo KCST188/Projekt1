@@ -7,22 +7,13 @@ import container.basic.heavy.dangerous.ToxicLiquidContainerBasic;
 import container.basic.standard.HeavyContainerBasic;
 import container.basic.standard.LiquidsContainerBasic;
 import container.basic.standard.StandardContainerBasic;
-import container.heavy.CoolingContainer;
-import container.heavy.dangerous.ExplosivesContainer;
-import container.heavy.dangerous.ToxicGranularContainer;
-import container.standard.HeavyContainer;
-import container.standard.LiquidsContainer;
-import container.standard.StandardContainer;
 import magazine.Magazine;
 import sender.Sender;
-import ship.Ship;
 import ship.ShipBasic;
 import ship.ShipCount;
 
-import java.util.Scanner;
-
 public class Interface {
-    public void display(){
+    public void display() {
         System.out.println("1. Create ship");
         System.out.println("2. Create Standard container");
         System.out.println("3. Create Heavy container");
@@ -39,7 +30,8 @@ public class Interface {
         System.out.println("14. Manually utilize container");
         System.out.println("15. Exit");
     }
-    public void createShips(ShipCount shipCount){
+
+    public void createShips(ShipCount shipCount) {
 
         shipCount.ships.add(new ShipBasic(5, 2, 3, 15, 15000,
                 "Cage", "London", "Helsinki", "Lisbon"));
@@ -54,7 +46,7 @@ public class Interface {
 
     }
 
-    public void createContainers(ShipCount shipCount, Sender sender, Magazine magazine){
+    public void createContainers(ShipCount shipCount, Sender sender, Magazine magazine) {
         shipCount.ships.get(0).containerList.add(new CoolingContainerBasic(sender, 1200, 1000,
                 15, 3, 3, "Steel", 5, 2000));
         shipCount.ships.get(0).containerList.add(new StandardContainerBasic(sender, 1000, 900,

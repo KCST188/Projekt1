@@ -3,9 +3,7 @@ package writeToFile;
 import magazine.Port;
 import sender.Sender;
 import sender.SenderCount;
-import ship.Ship;
 import ship.ShipAbstract;
-import ship.ShipBasic;
 import ship.ShipCount;
 
 import java.io.*;
@@ -53,7 +51,7 @@ public class Write {
             ObjectOutputStream o = new ObjectOutputStream(f);
 
             // Write objects to file
-            for (ShipAbstract ship: shipcount.ships) {
+            for (ShipAbstract ship : shipcount.ships) {
                 o.writeObject(ship);
             }
             o.close();
@@ -71,7 +69,7 @@ public class Write {
             ObjectOutputStream o = new ObjectOutputStream(f);
 
             // Write objects to file
-            for (Sender sender: sendercount.senders) {
+            for (Sender sender : sendercount.senders) {
                 o.writeObject(sender);
             }
             o.close();

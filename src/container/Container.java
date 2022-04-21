@@ -2,9 +2,7 @@ package container;
 
 import sender.Sender;
 
-import java.io.Serializable;
 import java.util.Scanner;
-import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class Container {
     public int id;
@@ -21,7 +19,6 @@ public abstract class Container {
     public Boolean isHeavy = false;
     public Boolean isElectric = false;
     public Scanner scanner = new Scanner(System.in);
-
 
 
 }

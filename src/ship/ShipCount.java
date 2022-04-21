@@ -11,12 +11,11 @@ public class ShipCount {
 
     public ShipAbstract findShipById() {
         System.out.println("Write ship id");
-        ShipAbstract foundShip = new ShipAbstract();
         int id = Integer.parseInt(scanner.nextLine());
         for (ShipAbstract ship : ships) {
-            if (ship.shipId == id) foundShip = ship;
+            if (ship.shipId == id) return ship;
         }
-        return foundShip;
+        return null;
     }
 
     public Container findContainerOnShipById(ShipAbstract ship) {

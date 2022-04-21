@@ -1,6 +1,5 @@
 package container.basic.standard;
 
-import container.standard.StandardContainer;
 import sender.Sender;
 
 public class HeavyContainerBasic extends StandardContainerBasic {

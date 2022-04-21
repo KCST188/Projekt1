@@ -2,7 +2,6 @@ package magazine;
 
 import container.Container;
 
-import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;

@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ShipAbstract {
+public abstract class ShipAbstract {
     public int shipId;
     public int maxDangerous;
     public int maxHeavy;

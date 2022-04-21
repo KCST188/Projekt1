@@ -13,7 +13,7 @@ public class ExplosivesContainer extends DangerousContainer {
         this.durabilityClass = Integer.parseInt(scanner.nextLine());
     }
 
-    public int timeToUtilzation(){
+    public int timeToUtilzation() {
         return Magazine.maxTimeExplosives - daysInMagazine;
     }
 

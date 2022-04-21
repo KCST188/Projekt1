@@ -10,7 +10,6 @@ import container.standard.StandardContainer;
 import magazine.Magazine;
 import sender.Sender;
 import ship.Ship;
-import ship.ShipAbstract;
 import ship.ShipCount;
 
 import java.util.Scanner;

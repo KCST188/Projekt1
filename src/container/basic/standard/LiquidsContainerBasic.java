@@ -1,7 +1,6 @@
 package container.basic.standard;
 
 import container.LiquidContainerInerface;
-import container.standard.StandardContainer;
 import sender.Sender;
 
 public class LiquidsContainerBasic extends StandardContainerBasic implements LiquidContainerInerface {

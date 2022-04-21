@@ -17,7 +17,7 @@ public class ToxicLiquidContainer extends DangerousContainer implements LiquidCo
         this.internalMaterial = scanner.nextLine();
     }
 
-    public int timeToUtilzation(){
+    public int timeToUtilzation() {
         return Magazine.maxTimeLiquidToxic - daysInMagazine;
     }
 

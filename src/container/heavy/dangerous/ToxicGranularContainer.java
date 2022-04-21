@@ -13,7 +13,7 @@ public class ToxicGranularContainer extends DangerousContainer {
         this.maxGranularWeight = Integer.parseInt(scanner.nextLine());
     }
 
-    public int timeToUtilzation(){
+    public int timeToUtilzation() {
         return Magazine.maxTimeGranularToxic - daysInMagazine;
     }
 
