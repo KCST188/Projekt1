@@ -1,29 +1,24 @@
-package container.standard;
+package container.basic.standard;
 
 import container.Container;
 import sender.Sender;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class StandardContainer extends Container {
+public class StandardContainerBasic extends Container {
     public int lenght;
     public int width;
     public int height;
 
-    public StandardContainer(Sender sender) {
+    public StandardContainerBasic(Sender sender, int weightBrutto, int weightNetto, int length, int width, int height) {
         this.sender = sender;
-        System.out.println("Write weight Brutto");
-        this.weightBrutto = Integer.parseInt(scanner.nextLine());
-        System.out.println("Write weight Netto");
-        this.weightNetto = Integer.parseInt(scanner.nextLine());
+        this.weightBrutto = weightBrutto;
+        this.weightNetto = weightNetto;
         this.tara = weightBrutto - weightNetto;
         this.id = ThreadLocalRandom.current().nextInt(1, 100000 + 1);
-        System.out.println("Write lenght");
-        this.lenght = Integer.parseInt(scanner.nextLine());
-        System.out.println("Write width");
-        this.width = Integer.parseInt(scanner.nextLine());
-        System.out.println("Write height");
-        this.height = Integer.parseInt(scanner.nextLine());
+        this.lenght = length;
+        this.width = width;
+        this.height = height;
     }
 
 
@@ -32,5 +27,4 @@ public class StandardContainer extends Container {
                 + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLength: " + lenght + "\nWidth: " + width
                 + "\nHeight: " + height + "\n";
     }
-
 }

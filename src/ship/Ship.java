@@ -1,39 +1,28 @@
 package ship;
 
-import container.Container;
-
-import java.io.Serializable;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Ship implements Serializable {
-    public int shipId;
-    public int maxDangerous;
-    public int maxHeavy;
-    public int maxElectric;
-    public int maxAll;
-    public int maxWeight;
-    public int dangerousAmount;
-    public int heavyAmount;
-    public int electricAmount;
-    public int containerWeight;
-    public String name;
-    public String homePort;
-    public String transportFrom;
-    public String transportTo;
-    public List<Container> containerList = new LinkedList<>();
+public class Ship extends ShipAbstract {
 
-    public Ship(int maxDangerous, int maxHeavy, int maxElectric, int maxAll, int maxWeight, String name, String homePort, String transportFrom, String transportTo) {
-        this.maxDangerous = maxDangerous;
-        this.maxHeavy = maxHeavy;
-        this.maxElectric = maxElectric;
-        this.maxAll = maxAll;
-        this.maxWeight = maxWeight;
-        this.name = name;
-        this.homePort = homePort;
-        this.transportFrom = transportFrom;
-        this.transportTo = transportTo;
+    public Ship() {
+        System.out.println("Write max dangerous containers");
+        this.maxDangerous = Integer.parseInt(scanner.nextLine());
+        System.out.println("Write max heavy containers");
+        this.maxHeavy = Integer.parseInt(scanner.nextLine());
+        System.out.println("Write max electric containers");
+        this.maxElectric = Integer.parseInt(scanner.nextLine());
+        System.out.println("Write max containers");
+        this.maxAll = Integer.parseInt(scanner.nextLine());
+        System.out.println("Write max weight");
+        this.maxWeight = Integer.parseInt(scanner.nextLine());
+        System.out.println("Write name");
+        this.name = scanner.nextLine();
+        System.out.println("Write home Port");
+        this.homePort = scanner.nextLine();
+        System.out.println("Write from is transport");
+        this.transportFrom = scanner.nextLine();
+        System.out.println("Write where to is transport");
+        this.transportTo = scanner.nextLine();
         this.shipId = ThreadLocalRandom.current().nextInt(1, 100000 + 1);
     }
 

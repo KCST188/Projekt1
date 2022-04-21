@@ -1,15 +1,15 @@
-package container.standard;
+package container.basic.standard;
 
+import container.standard.StandardContainer;
 import sender.Sender;
 
-public class HeavyContainer extends StandardContainer {
+public class HeavyContainerBasic extends StandardContainerBasic {
     public String containerMaterial;
     private Boolean isHeavy = true;
 
-    public HeavyContainer(Sender sender) {
-        super(sender);
-        System.out.println("Write container material");
-        this.containerMaterial = scanner.nextLine();
+    public HeavyContainerBasic(Sender sender, int weightBrutto, int weightNetto, int length, int width, int height, String containerMaterial) {
+        super(sender, weightBrutto, weightNetto, length, width, height);
+        this.containerMaterial = containerMaterial;
     }
 
     public String toString() {

@@ -1,19 +1,16 @@
-package container.standard;
+package container.basic.standard;
 
 import container.LiquidContainerInerface;
+import container.standard.StandardContainer;
 import sender.Sender;
 
-public class LiquidsContainer extends StandardContainer implements LiquidContainerInerface {
+public class LiquidsContainerBasic extends StandardContainerBasic implements LiquidContainerInerface {
     public int maxPressure;
 
-
-    public LiquidsContainer(Sender sender) {
-        super(sender);
-        System.out.println("Write max pressure");
-        this.maxPressure = Integer.parseInt(scanner.nextLine());
-
+    public LiquidsContainerBasic(Sender sender, int weightBrutto, int weightNetto, int length, int width, int height, int maxPressure) {
+        super(sender, weightBrutto, weightNetto, length, width, height);
+        this.maxPressure = maxPressure;
     }
-
 
     public String toString() {
         return "Id: " + id + "\nSender: " + sender.toString() + "Weight Brutto: " + weightBrutto + "\nWeight Netto: " + weightNetto

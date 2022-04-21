@@ -15,6 +15,8 @@ public class Train extends Port {
         if (listOfContainers.size() < maxContainerCount) {
             ship.containerList.remove(container);
             listOfContainers.add(container);
+        }else {
+            System.out.println("j");
         }
     }
 }

@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public abstract class Port implements Serializable {
+public abstract class Port {
 
     public int maxContainerCount;
     public List<Container> listOfContainers = new LinkedList<>();

@@ -1,9 +1,10 @@
 package container.heavy.dangerous;
 
+import magazine.Magazine;
 import sender.Sender;
 
 public class ToxicGranularContainer extends DangerousContainer {
-    private int maxGranularWeight;
+    public int maxGranularWeight;
     public Boolean isToxicGranular = true;
 
     public ToxicGranularContainer(Sender sender) {
@@ -12,9 +13,14 @@ public class ToxicGranularContainer extends DangerousContainer {
         this.maxGranularWeight = Integer.parseInt(scanner.nextLine());
     }
 
+    public int timeToUtilzation(){
+        return Magazine.maxTimeGranularToxic - daysInMagazine;
+    }
+
     public String toString() {
-        return "Id: " + id + "\nSender: " + sender.toString() + "Weight Netto: " + weightNetto + "\nWeight Brutto: " + weightBrutto
-                + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLenght: " + lenght + "\nWidth: " + width
-                + "\nHeight: " + height + "\nContainer material: " + containerMaterial + "\nMax granular weight: " + maxGranularWeight;
+        return "Id: " + id + "\nSender: " + sender.toString() + "Weight Brutto: " + weightBrutto + "\nWeight Netto: " + weightNetto
+                + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLength: " + lenght + "\nWidth: " + width
+                + "\nHeight: " + height + "\nContainer material: " + containerMaterial + "\nMax granular weight: " + maxGranularWeight
+                + "\nTime to utilization: " + timeToUtilzation() + "\n";
     }
 }

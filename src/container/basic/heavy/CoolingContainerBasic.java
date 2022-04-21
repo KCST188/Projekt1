@@ -1,19 +1,17 @@
-package container.heavy;
+package container.basic.heavy;
 
-import container.standard.HeavyContainer;
+import container.basic.standard.HeavyContainerBasic;
 import sender.Sender;
 
-public class CoolingContainer extends HeavyContainer {
+public class CoolingContainerBasic extends HeavyContainerBasic {
     public int temperatureInside;
     public int voltage;
     public Boolean isElectric = false;
 
-    public CoolingContainer(Sender sender) {
-        super(sender);
-        System.out.println("Write temperature inside");
-        this.temperatureInside = Integer.parseInt(scanner.nextLine());
-        System.out.println("Write voltage");
-        this.voltage = Integer.parseInt(scanner.nextLine());
+    public CoolingContainerBasic(Sender sender, int weightBrutto, int weightNetto, int length, int width, int height, String containerMaterial, int temperatureInside, int voltage) {
+        super(sender, weightBrutto, weightNetto, length, width, height, containerMaterial);
+        this.temperatureInside = temperatureInside;
+        this.voltage = voltage;
     }
 
     public String toString() {

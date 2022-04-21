@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
-public abstract class Container implements Serializable {
+public abstract class Container {
     public int id;
     public Sender sender;
     public int weightNetto;
@@ -22,24 +22,6 @@ public abstract class Container implements Serializable {
     public Boolean isElectric = false;
     public Scanner scanner = new Scanner(System.in);
 
-    public Container(Sender sender) {
-        this.sender = sender;
-
-        System.out.println("Write weight Brutto");
-        int weightBrutto = Integer.parseInt(scanner.nextLine());
-
-        System.out.println("Write weight Netto");
-        int weightNetto = Integer.parseInt(scanner.nextLine());
-
-        this.weightNetto = weightNetto;
-        this.weightBrutto = weightBrutto;
-        this.tara = weightBrutto - weightNetto;
-        this.id = ThreadLocalRandom.current().nextInt(1, 100000 + 1);
-    }
 
 
-    public String toString() {
-        return "Id: " + id + "\nSender: " + sender.toString() + "Weight Netto: " + weightNetto + "\nWeight Brutto" + weightBrutto
-                + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine;
-    }
 }

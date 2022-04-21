@@ -1,14 +1,14 @@
 package magazine;
 
 import container.Container;
-import ship.Ship;
+import ship.ShipAbstract;
 import ship.ShipCount;
 
 public class Magazine extends Port {
 
-    private final int maxTimeExplosives = 5;
-    private final int maxTimeLiquidToxic = 10;
-    private final int maxTimeGranularToxic = 14;
+    public static final int maxTimeExplosives = 5;
+    public static final int maxTimeLiquidToxic = 10;
+    public static final int maxTimeGranularToxic = 14;
     private final int maxWarnings = 2;
 
 
@@ -52,7 +52,7 @@ public class Magazine extends Port {
         else listOfContainers.remove(container);
     }
 
-    private void load(Ship ship, Container container) {
+    private void load(ShipAbstract ship, Container container) {
         if (ship.maxAll <= ship.containerList.size()) System.out.println("Container too heavy");
         else if (ship.maxWeight < ship.containerWeight) System.out.println("Too much containers in magazine");
         else {
@@ -62,13 +62,13 @@ public class Magazine extends Port {
         }
     }
 
-    private void unload(Ship ship, Container container) {
+    private void unload(ShipAbstract ship, Container container) {
         ship.containerList.remove(container);
         listOfContainers.add(container);
     }
 
     public void loadOnShip(ShipCount shipCount) {
-        Ship ship = shipCount.findShipById();
+        ShipAbstract ship = shipCount.findShipById();
         Container container = findContainerById();
         if (ship == null || container == null) System.out.println("Container or ship don't exist");
         else {
@@ -92,8 +92,8 @@ public class Magazine extends Port {
     }
 
     public void unloadFromShip(ShipCount shipCount) {
-        Ship ship = shipCount.findShipById();
-        Container container = findContainerById();
+        ShipAbstract ship = shipCount.findShipById();
+        Container container = shipCount.findContainerOnShipById(ship);
         if (ship == null || container == null) System.out.println("Container or ship don't exist");
         else unload(ship, container);
     }
