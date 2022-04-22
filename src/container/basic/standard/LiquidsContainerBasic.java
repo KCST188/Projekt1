@@ -13,7 +13,7 @@ public class LiquidsContainerBasic extends StandardContainerBasic implements Liq
 
     public String toString() {
         return "Id: " + id + "\nSender: " + sender.toString() + "Weight Brutto: " + weightBrutto + "\nWeight Netto: " + weightNetto
-                + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLenght: " + lenght + "\nWidth: " + width
-                + "\nHeight: " + height + "\nMax pressure: " + maxPressure + "\nExternal material: " + externalMaterial + "\n";
+                + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLenght: " + length + "\nWidth: " + width
+                + "\nHeight: " + height + "\nMax pressure: " + this.maxPressure + "\nExternal material: " + externalMaterial + "\n";
     }
 }

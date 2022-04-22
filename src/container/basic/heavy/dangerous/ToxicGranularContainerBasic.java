@@ -13,7 +13,8 @@ public class ToxicGranularContainerBasic extends DangerousContainerBasic {
 
     public String toString() {
         return "Id: " + id + "\nSender: " + sender.toString() + "Weight Brutto: " + weightBrutto + "\nWeight Netto: " + weightNetto
-                + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLenght: " + lenght + "\nWidth: " + width
-                + "\nHeight: " + height + "\nContainer material: " + containerMaterial + "\nMax granular weight: " + maxGranularWeight + "\n";
+                + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLength: " + length + "\nWidth: " + width
+                + "\nHeight: " + height + "\nContainer material: " + containerMaterial + "\nMax granular weight: "
+                + this.maxGranularWeight + "\n";
     }
 }

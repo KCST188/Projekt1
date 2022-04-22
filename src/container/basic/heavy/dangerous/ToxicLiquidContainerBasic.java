@@ -5,19 +5,19 @@ import sender.Sender;
 
 public class ToxicLiquidContainerBasic extends DangerousContainerBasic implements LiquidContainerInerface {
     public int temperatureOfLiquid;
-    public String internalMaterial;
+    public String liquid;
     public Boolean isToxicLiquid = true;
 
-    public ToxicLiquidContainerBasic(Sender sender, int weightBrutto, int weightNetto, int length, int width, int height, String containerMaterial, int temperatureOfLiquid, String internalMaterial) {
+    public ToxicLiquidContainerBasic(Sender sender, int weightBrutto, int weightNetto, int length, int width, int height, String containerMaterial, int temperatureOfLiquid, String liquid) {
         super(sender, weightBrutto, weightNetto, length, width, height, containerMaterial);
         this.temperatureOfLiquid = temperatureOfLiquid;
-        this.internalMaterial = internalMaterial;
+        this.liquid = liquid;
     }
 
     public String toString() {
         return "Id: " + id + "\nSender: " + sender.toString() + "Weight Brutto: " + weightBrutto + "\nWeight Netto: " + weightNetto
-                + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLenght: " + lenght + "\nWidth: " + width
+                + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLength: " + length + "\nWidth: " + width
                 + "\nHeight: " + height + "\nContainer material: " + containerMaterial + "\nTemperature of liquid: " + temperatureOfLiquid
-                + "C" + "\nInternal material: " + internalMaterial + "\nExternal material: " + externalMaterial + "\n";
+                + "C" + "\nType of liquid: " + this.liquid + "\nExternal material: " + externalMaterial + "\n";
     }
 }

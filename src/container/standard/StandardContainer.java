@@ -6,30 +6,50 @@ import sender.Sender;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class StandardContainer extends Container {
-    public int lenght;
+    public int length;
     public int width;
     public int height;
 
     public StandardContainer(Sender sender) {
         this.sender = sender;
-        System.out.println("Write weight Brutto");
-        this.weightBrutto = Integer.parseInt(scanner.nextLine());
-        System.out.println("Write weight Netto");
-        this.weightNetto = Integer.parseInt(scanner.nextLine());
+        int weightBrutto;
+        int weightNetto;
+        int length;
+        int width;
+        int height;
+        do {
+            System.out.println("Write weight Brutto between 800 and 4000 kg");
+             weightBrutto = Integer.parseInt(scanner.nextLine());
+        }while(weightBrutto < 800 || weightBrutto > 4000);
+        this.weightBrutto = weightBrutto;
+        do{
+            System.out.println("Write weight Netto larger than 600 kg and smaller than weight Brutto");
+            weightNetto = Integer.parseInt(scanner.nextLine());
+        }while(weightNetto < 600 || weightBrutto > weightNetto);
+        this.weightNetto = weightNetto;
         this.tara = weightBrutto - weightNetto;
         this.id = ThreadLocalRandom.current().nextInt(1, 100000 + 1);
-        System.out.println("Write lenght");
-        this.lenght = Integer.parseInt(scanner.nextLine());
-        System.out.println("Write width");
-        this.width = Integer.parseInt(scanner.nextLine());
-        System.out.println("Write height");
-        this.height = Integer.parseInt(scanner.nextLine());
+        do{
+            System.out.println("Write length between 8 and 20 m");
+            length = Integer.parseInt(scanner.nextLine());
+        }while(length < 8 || length > 20);
+        this.length = length;
+        do{
+        System.out.println("Write width between 1 and 6 m");
+         width = Integer.parseInt(scanner.nextLine());
+        }while(width < 1 || width > 6);
+        this.width = width;
+        do{
+        System.out.println("Write height between 1 and 4 m");
+         height = Integer.parseInt(scanner.nextLine());
+        }while(height < 1 || height > 4);
+        this.height = height;
     }
 
 
     public String toString() {
         return "Id: " + id + "\nSender: " + sender.toString() + "Weight Brutto: " + weightBrutto + "\nWeight Netto: " + weightNetto
-                + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLength: " + lenght + "\nWidth: " + width
+                + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLength: " + length + "\nWidth: " + width
                 + "\nHeight: " + height + "\n";
     }
 

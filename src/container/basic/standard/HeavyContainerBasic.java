@@ -13,7 +13,7 @@ public class HeavyContainerBasic extends StandardContainerBasic {
 
     public String toString() {
         return "Id: " + id + "\nSender: " + sender.toString() + "Weight Brutto: " + weightBrutto + "\nWeight Netto: " + weightNetto
-                + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLenght: " + lenght + "\nWidth: " + width
-                + "\nHeight: " + height + "\nContainer material: " + containerMaterial + "\n";
+                + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLenght: " + length + "\nWidth: " + width
+                + "\nHeight: " + height + "\nContainer material: " + this.containerMaterial + "\n";
     }
 }

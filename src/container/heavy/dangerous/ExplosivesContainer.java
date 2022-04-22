@@ -9,8 +9,12 @@ public class ExplosivesContainer extends DangerousContainer {
 
     public ExplosivesContainer(Sender sender) {
         super(sender);
-        System.out.println("Write durability class");
-        this.durabilityClass = Integer.parseInt(scanner.nextLine());
+        int durabilityClass;
+        do {
+            System.out.println("Write durability class between 1 and 6");
+             durabilityClass = Integer.parseInt(scanner.nextLine());
+        }while(durabilityClass < 1 || durabilityClass > 6);
+        this.durabilityClass = durabilityClass;
     }
 
     public int timeToUtilzation() {
@@ -19,7 +23,7 @@ public class ExplosivesContainer extends DangerousContainer {
 
     public String toString() {
         return "Id: " + id + "\nSender: " + sender.toString() + "Weight Brutto: " + weightBrutto + "\nWeight Netto: " + weightNetto
-                + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLenght: " + lenght + "\nWidth: " + width
+                + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLength: " + length + "\nWidth: " + width
                 + "\nHeight: " + height + "\nContainer material: " + containerMaterial + "\nDurability class: " + durabilityClass
                 + "\nTime to utilization: " + timeToUtilzation() + "\n";
     }

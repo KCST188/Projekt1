@@ -6,7 +6,7 @@ import sender.Sender;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class StandardContainerBasic extends Container {
-    public int lenght;
+    public int length;
     public int width;
     public int height;
 
@@ -16,15 +16,15 @@ public class StandardContainerBasic extends Container {
         this.weightNetto = weightNetto;
         this.tara = weightBrutto - weightNetto;
         this.id = ThreadLocalRandom.current().nextInt(1, 100000 + 1);
-        this.lenght = length;
+        this.length = length;
         this.width = width;
         this.height = height;
     }
 
 
     public String toString() {
-        return "Id: " + id + "\nSender: " + sender.toString() + "Weight Brutto: " + weightBrutto + "\nWeight Netto: " + weightNetto
-                + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLength: " + lenght + "\nWidth: " + width
-                + "\nHeight: " + height + "\n";
+        return "Id: " + this.id + "\nSender: " + this.sender.toString() + "Weight Brutto: " + this.weightBrutto + "\nWeight Netto: "
+                + this.weightNetto + "\nTara: " + this.tara + "\nDays in magazine: " + this.daysInMagazine + "\nLength: "
+                + this.length + "\nWidth: " + this.width + "\nHeight: " + this.height + "\n";
     }
 }
