@@ -8,6 +8,7 @@ import container.standard.HeavyContainer;
 import container.standard.LiquidsContainer;
 import container.standard.StandardContainer;
 import magazine.Magazine;
+import magazine.Train;
 import sender.Sender;
 import ship.Ship;
 import ship.ShipCount;
@@ -16,10 +17,11 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
         ShipCount shipCount = new ShipCount();
         Magazine magazine = new Magazine(15);
+        Train train = new Train(10);
         Interface anInterface = new Interface();
         byte[] pesel = {9, 7, 1, 2, 2, 3, 7, 5, 3, 4, 5};
         byte[] pesel2 = {8, 7, 0, 5, 1, 2, 5, 3, 1, 7, 2};
@@ -27,7 +29,8 @@ public class Main {
         Sender sender2 = new Sender("Andy", "Jones", pesel2, "Gdansk");
         anInterface.createShips(shipCount);
         anInterface.createContainers(shipCount, sender, magazine);
-
+        PassingDays passingDays = new PassingDays(magazine);
+        passingDays.start();
         while (true) {
             anInterface.display();
             int userChoice = scanner.nextInt();
@@ -45,8 +48,9 @@ public class Main {
                 case 11 -> shipCount.getListOfContainersOnShip();
                 case 12 -> magazine.loadOnShip(shipCount);
                 case 13 -> magazine.unloadFromShip(shipCount);
-                case 14 -> magazine.manuallyUtilizeContainer();
-                case 15 -> System.exit(0);
+                case 14 -> train.loadOnTrain(shipCount);
+                case 15 -> magazine.manuallyUtilizeContainer();
+                case 16 -> System.exit(0);
             }
         }
     }

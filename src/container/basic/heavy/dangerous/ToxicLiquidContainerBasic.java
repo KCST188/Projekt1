@@ -18,6 +18,7 @@ public class ToxicLiquidContainerBasic extends DangerousContainerBasic implement
         return "Id: " + id + "\nSender: " + sender.toString() + "Weight Brutto: " + weightBrutto + "\nWeight Netto: " + weightNetto
                 + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLength: " + length + "\nWidth: " + width
                 + "\nHeight: " + height + "\nContainer material: " + containerMaterial + "\nTemperature of liquid: " + temperatureOfLiquid
-                + "C" + "\nType of liquid: " + this.liquid + "\nExternal material: " + externalMaterial + "\n";
+                + "C" + "\nType of liquid: " + this.liquid + "\nExternal material: " + externalMaterial
+                + "\nTime to utilization: " + timeToUtilization();
     }
 }

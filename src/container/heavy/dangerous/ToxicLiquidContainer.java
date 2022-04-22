@@ -14,8 +14,8 @@ public class ToxicLiquidContainer extends DangerousContainer implements LiquidCo
         int temperatureOfLiquid;
         do {
             System.out.println("Write temperature of liquid between -10 and 60 C");
-             temperatureOfLiquid= Integer.parseInt(scanner.nextLine());
-        }while(temperatureOfLiquid < -10 || temperatureOfLiquid > 60);
+            temperatureOfLiquid = Integer.parseInt(scanner.nextLine());
+        } while (temperatureOfLiquid < -10 || temperatureOfLiquid > 60);
         this.temperatureOfLiquid = temperatureOfLiquid;
         System.out.println("Write type of liquid");
         this.liquid = scanner.nextLine();
@@ -23,7 +23,7 @@ public class ToxicLiquidContainer extends DangerousContainer implements LiquidCo
 
     }
 
-    public int timeToUtilzation() {
+    public int timeToUtilization() {
         return Magazine.maxTimeLiquidToxic - daysInMagazine;
     }
 
@@ -32,6 +32,6 @@ public class ToxicLiquidContainer extends DangerousContainer implements LiquidCo
                 + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLength: " + length + "\nWidth: " + width
                 + "\nHeight: " + height + "\nContainer material: " + containerMaterial + "\nTemperature of liquid: " + temperatureOfLiquid
                 + "C" + "\nType of liquid: " + liquid + "\nExternal material: " + externalMaterial + "\nTime to utilization: "
-                + timeToUtilzation() + "\n";
+                + timeToUtilization() + "\n";
     }
 }

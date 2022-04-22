@@ -26,9 +26,10 @@ public class Interface {
         System.out.println("10. List of containers in magazine");
         System.out.println("11. List of containers on ship");
         System.out.println("12. Load container on ship");
-        System.out.println("13. Unload container from ship");
-        System.out.println("14. Manually utilize container");
-        System.out.println("15. Exit");
+        System.out.println("13. Load container on train");
+        System.out.println("14. Unload container from ship");
+        System.out.println("15. Manually utilize container");
+        System.out.println("16. Exit");
     }
 
     public void createShips(ShipCount shipCount) {
@@ -81,4 +82,6 @@ public class Interface {
                 16, 4, 3, "Steel", -5, 1800));
 
     }
+
+
 }

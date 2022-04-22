@@ -1,7 +1,8 @@
 package magazine;
 
 import container.Container;
-import ship.Ship;
+import ship.ShipAbstract;
+import ship.ShipCount;
 
 public class Train extends Port {
 
@@ -11,12 +12,19 @@ public class Train extends Port {
         super(maxContainerCount);
     }
 
-    public void loadOnTrain(Ship ship, Container container) {
-        if (listOfContainers.size() < maxContainerCount) {
-            ship.containerList.remove(container);
-            listOfContainers.add(container);
-        } else {
-            System.out.println("j");
+    public void loadOnTrain(ShipCount shipCount) {
+        ShipAbstract ship = shipCount.findShipById();
+        Container container = shipCount.findContainerOnShipById(ship);
+        if (ship == null || container == null) System.out.println("Container or ship don't exist");
+        else {
+            if (listOfContainers.size() < maxContainerCount) {
+                ship.containerList.remove(container);
+                listOfContainers.add(container);
+            } else {
+                TrainThread trainThread = new TrainThread();
+                trainThread.start();
+                listOfContainers.clear();
+            }
         }
     }
 }
