@@ -4,37 +4,43 @@ import container.Container;
 import ship.ShipAbstract;
 import ship.ShipCount;
 
+import java.time.LocalDate;
+
 public class Magazine extends Port {
 
     public static final int maxTimeExplosives = 5;
     public static final int maxTimeLiquidToxic = 10;
     public static final int maxTimeGranularToxic = 14;
     private final int maxWarnings = 2;
+    public LocalDate date = LocalDate.now();
 
 
     public Magazine(int maxContainers) {
         super(maxContainers);
     }
 
-    public void dayPassed() {
+    public void dayPassed() throws IrresponsibleSenderWithDangerousGoods {
         for (Container container : listOfContainers) {
             container.daysInMagazine++;
-            utilizeContainer();
+            utilizeContainer(container);
         }
     }
 
-    private void utilizeContainer() {
-        for (Container container : listOfContainers) {
-            if (container.isDangerous) {
-                if ((container.daysInMagazine > maxTimeExplosives && container.isExplosive) ||
-                        (container.daysInMagazine > maxTimeLiquidToxic && container.isToxicLiquid) ||
-                        (container.daysInMagazine > maxTimeGranularToxic && container.isToxicGranular)) {
-                    listOfContainers.remove(container);
-                    container.sender.getWarning();
-                    if (container.sender.warning >= maxWarnings) container.sender.getBanned();
-                }
+    public void utilizeContainer(Container container) throws IrresponsibleSenderWithDangerousGoods{
+        if ((container.daysInMagazine > maxTimeExplosives && container.isExplosive) ||
+                (container.daysInMagazine > maxTimeLiquidToxic && container.isToxicLiquid) ||
+                (container.daysInMagazine > maxTimeGranularToxic && container.isToxicGranular)) {
+            listOfContainers.remove(container);
+            container.sender.getWarning();
+            container.dateUtilize = date;
+            if (container.sender.warning >= maxWarnings) {
+                container.sender.getBanned();
             }
+            date = date.plusDays(1);
+            throw new IrresponsibleSenderWithDangerousGoods("Utilization of container with Id: " + container.id + "\nDate arrived: "
+                    + container.dateArrived + "\nDate of utilization: " + container.dateUtilize);
         }
+
     }
 
     public Container findContainerById() {
@@ -95,7 +101,11 @@ public class Magazine extends Port {
         ShipAbstract ship = shipCount.findShipById();
         Container container = shipCount.findContainerOnShipById(ship);
         if (ship == null || container == null) System.out.println("Container or ship don't exist");
-        else unload(ship, container);
+        else if (container.sender.banned) System.out.println("This sender is banned");
+        else {
+            unload(ship, container);
+            container.dateArrived = date;
+        }
     }
 
     public void getListOfContainersInMagazine() {
@@ -106,6 +116,16 @@ public class Magazine extends Port {
 
     public void addContainer(Container container) {
         if (maxContainerCount == listOfContainers.size()) System.out.println("Too many containers!");
-        else listOfContainers.add(container);
+        else {
+            listOfContainers.add(container);
+            container.dateArrived = date;
+        }
+    }
+
+    public class IrresponsibleSenderWithDangerousGoods extends Exception {
+        public IrresponsibleSenderWithDangerousGoods(String message) {
+            super(message);
+            System.out.println(message);
+        }
     }
 }

@@ -1,14 +1,20 @@
 package container.basic.heavy.dangerous;
 
+import container.basic.standard.HeavyContainerBasic;
+import magazine.Magazine;
 import sender.Sender;
 
-public class ToxicGranularContainerBasic extends DangerousContainerBasic {
+public class ToxicGranularContainerBasic extends HeavyContainerBasic {
     public int maxGranularWeight;
-    public Boolean isToxicGranular = true;
 
     public ToxicGranularContainerBasic(Sender sender, int weightBrutto, int weightNetto, int length, int width, int height, String containerMaterial, int maxGranularWeight) {
         super(sender, weightBrutto, weightNetto, length, width, height, containerMaterial);
         this.maxGranularWeight = maxGranularWeight;
+        this.isToxicGranular = true;
+    }
+
+    public int timeToUtilization() {
+        return Magazine.maxTimeGranularToxic - daysInMagazine;
     }
 
     public String toString() {

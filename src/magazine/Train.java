@@ -27,4 +27,10 @@ public class Train extends Port {
             }
         }
     }
+
+    public void getListContainersOnTrain(){
+        for (Container container: listOfContainers) {
+            System.out.println(container.toString());
+        }
+    }
 }

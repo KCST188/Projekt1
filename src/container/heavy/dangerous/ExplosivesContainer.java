@@ -1,10 +1,11 @@
 package container.heavy.dangerous;
 
+import container.standard.HeavyContainer;
+import magazine.Magazine;
 import sender.Sender;
 
-public class ExplosivesContainer extends DangerousContainer {
+public class ExplosivesContainer extends HeavyContainer {
     public int durabilityClass;
-    public Boolean isExplosive = true;
 
     public ExplosivesContainer(Sender sender) {
         super(sender);
@@ -14,8 +15,12 @@ public class ExplosivesContainer extends DangerousContainer {
             durabilityClass = Integer.parseInt(scanner.nextLine());
         } while (durabilityClass < 1 || durabilityClass > 6);
         this.durabilityClass = durabilityClass;
+        this.isExplosive = true;
     }
 
+    public int timeToUtilization() {
+        return Magazine.maxTimeExplosives - daysInMagazine;
+    }
 
     public String toString() {
         return "Id: " + id + "\nSender: " + sender.toString() + "Weight Brutto: " + weightBrutto + "\nWeight Netto: " + weightNetto

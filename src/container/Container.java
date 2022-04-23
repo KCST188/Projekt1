@@ -2,6 +2,7 @@ package container;
 
 import sender.Sender;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public abstract class Container {
@@ -19,6 +20,7 @@ public abstract class Container {
     public Boolean isHeavy = false;
     public Boolean isElectric = false;
     public Scanner scanner = new Scanner(System.in);
-
+    public LocalDate dateArrived = null;
+    public LocalDate dateUtilize = null;
 
 }

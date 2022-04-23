@@ -1,17 +1,23 @@
 package container.basic.heavy.dangerous;
 
 import container.LiquidContainerInerface;
+import container.basic.standard.HeavyContainerBasic;
+import magazine.Magazine;
 import sender.Sender;
 
-public class ToxicLiquidContainerBasic extends DangerousContainerBasic implements LiquidContainerInerface {
+public class ToxicLiquidContainerBasic extends HeavyContainerBasic implements LiquidContainerInerface {
     public int temperatureOfLiquid;
     public String liquid;
-    public Boolean isToxicLiquid = true;
 
     public ToxicLiquidContainerBasic(Sender sender, int weightBrutto, int weightNetto, int length, int width, int height, String containerMaterial, int temperatureOfLiquid, String liquid) {
         super(sender, weightBrutto, weightNetto, length, width, height, containerMaterial);
         this.temperatureOfLiquid = temperatureOfLiquid;
         this.liquid = liquid;
+        this.isToxicLiquid = true;
+    }
+
+    public int timeToUtilization() {
+        return Magazine.maxTimeLiquidToxic - daysInMagazine;
     }
 
     public String toString() {

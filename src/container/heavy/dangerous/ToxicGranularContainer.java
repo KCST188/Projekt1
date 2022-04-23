@@ -1,11 +1,11 @@
 package container.heavy.dangerous;
 
+import container.standard.HeavyContainer;
 import magazine.Magazine;
 import sender.Sender;
 
-public class ToxicGranularContainer extends DangerousContainer {
+public class ToxicGranularContainer extends HeavyContainer {
     public int maxGranularWeight;
-    public Boolean isToxicGranular = true;
 
     public ToxicGranularContainer(Sender sender) {
         super(sender);
@@ -15,6 +15,7 @@ public class ToxicGranularContainer extends DangerousContainer {
             maxGranularWeight = Integer.parseInt(scanner.nextLine());
         } while (maxGranularWeight < 0.4 * weightNetto || maxGranularWeight > weightNetto);
         this.maxGranularWeight = maxGranularWeight;
+        this.isToxicGranular = true;
     }
 
     public int timeToUtilization() {

@@ -25,11 +25,12 @@ public class Interface {
         System.out.println("9. List of ships");
         System.out.println("10. List of containers in magazine");
         System.out.println("11. List of containers on ship");
-        System.out.println("12. Load container on ship");
-        System.out.println("13. Load container on train");
-        System.out.println("14. Unload container from ship");
-        System.out.println("15. Manually utilize container");
-        System.out.println("16. Exit");
+        System.out.println("12. List of containers on train");
+        System.out.println("13. Load container on ship");
+        System.out.println("14. Load container on train");
+        System.out.println("15. Unload container from ship");
+        System.out.println("16. Manually utilize container");
+        System.out.println("17. Exit");
     }
 
     public void createShips(ShipCount shipCount) {
@@ -74,11 +75,11 @@ public class Interface {
                 15, 4, 2, "Harden Steel"));
         shipCount.ships.get(4).containerList.add(new ToxicGranularContainerBasic(sender, 1400, 1200,
                 20, 4, 3, "Steel", 800));
-        magazine.listOfContainers.add(new StandardContainerBasic(sender, 900, 750,
+        magazine.addContainer(new StandardContainerBasic(sender, 900, 750,
                 12, 3, 2));
-        magazine.listOfContainers.add(new ExplosivesContainerBasic(sender, 1200, 1000,
+        magazine.addContainer(new ExplosivesContainerBasic(sender, 1200, 1000,
                 15, 3, 3, "Harden Steel", 4));
-        magazine.listOfContainers.add(new CoolingContainerBasic(sender, 1300, 1150,
+        magazine.addContainer(new CoolingContainerBasic(sender, 1300, 1150,
                 16, 4, 3, "Steel", -5, 1800));
 
     }

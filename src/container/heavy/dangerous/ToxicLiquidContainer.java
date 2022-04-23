@@ -1,13 +1,13 @@
 package container.heavy.dangerous;
 
 import container.LiquidContainerInerface;
+import container.standard.HeavyContainer;
 import magazine.Magazine;
 import sender.Sender;
 
-public class ToxicLiquidContainer extends DangerousContainer implements LiquidContainerInerface {
+public class ToxicLiquidContainer extends HeavyContainer implements LiquidContainerInerface {
     public int temperatureOfLiquid;
     public String liquid;
-    public Boolean isToxicLiquid = true;
 
     public ToxicLiquidContainer(Sender sender) {
         super(sender);
@@ -19,8 +19,7 @@ public class ToxicLiquidContainer extends DangerousContainer implements LiquidCo
         this.temperatureOfLiquid = temperatureOfLiquid;
         System.out.println("Write type of liquid");
         this.liquid = scanner.nextLine();
-
-
+        this.isToxicLiquid = true;
     }
 
     public int timeToUtilization() {

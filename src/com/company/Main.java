@@ -17,7 +17,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ShipCount shipCount = new ShipCount();
         Magazine magazine = new Magazine(15);
@@ -46,11 +46,12 @@ public class Main {
                 case 9 -> shipCount.displayShips();
                 case 10 -> magazine.getListOfContainersInMagazine();
                 case 11 -> shipCount.getListOfContainersOnShip();
-                case 12 -> magazine.loadOnShip(shipCount);
-                case 13 -> magazine.unloadFromShip(shipCount);
-                case 14 -> train.loadOnTrain(shipCount);
-                case 15 -> magazine.manuallyUtilizeContainer();
-                case 16 -> System.exit(0);
+                case 12 -> train.getListContainersOnTrain();
+                case 13 -> magazine.loadOnShip(shipCount);
+                case 14 -> magazine.unloadFromShip(shipCount);
+                case 15 -> train.loadOnTrain(shipCount);
+                case 16 -> magazine.manuallyUtilizeContainer();
+                case 17 -> System.exit(0);
             }
         }
     }

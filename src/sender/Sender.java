@@ -3,7 +3,7 @@ package sender;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Sender implements Serializable {
+public class Sender {
 
     public String name;
     public String surname;
