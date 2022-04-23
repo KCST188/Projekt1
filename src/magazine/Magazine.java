@@ -101,7 +101,7 @@ public class Magazine extends Port {
         ShipAbstract ship = shipCount.findShipById();
         Container container = shipCount.findContainerOnShipById(ship);
         if (ship == null || container == null) System.out.println("Container or ship don't exist");
-        else if (container.sender.banned) System.out.println("This sender is banned");
+        else if (container.sender.banned) System.out.println("This sender is banned, return container with id: " + container.id + " to sender.\n");
         else {
             unload(ship, container);
             container.dateArrived = date;
