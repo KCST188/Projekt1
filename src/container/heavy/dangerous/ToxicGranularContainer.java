@@ -10,11 +10,15 @@ public class ToxicGranularContainer extends HeavyContainer {
     public ToxicGranularContainer(Sender sender) {
         super(sender);
         int maxGranularWeight;
-        do {
-            System.out.println("Write max weight of granular between weight netto and 40% of that");
-            maxGranularWeight = Integer.parseInt(scanner.nextLine());
-        } while (maxGranularWeight < 0.4 * weightNetto || maxGranularWeight > weightNetto);
-        this.maxGranularWeight = maxGranularWeight;
+        try {
+            do {
+                System.out.println("Write max weight of granular between weight netto and 40% of that");
+                maxGranularWeight = Integer.parseInt(scanner.nextLine());
+            } while (maxGranularWeight < 0.4 * weightNetto || maxGranularWeight > weightNetto);
+            this.maxGranularWeight = maxGranularWeight;
+        } catch (NumberFormatException e){
+            System.out.println(e.getMessage());
+        }
         this.isToxicGranular = true;
     }
 

@@ -10,11 +10,15 @@ public class ExplosivesContainer extends HeavyContainer {
     public ExplosivesContainer(Sender sender) {
         super(sender);
         int durabilityClass;
-        do {
-            System.out.println("Write durability class between 1 and 6");
-            durabilityClass = Integer.parseInt(scanner.nextLine());
-        } while (durabilityClass < 1 || durabilityClass > 6);
-        this.durabilityClass = durabilityClass;
+        try {
+            do {
+                System.out.println("Write durability class between 1 and 6");
+                durabilityClass = Integer.parseInt(scanner.nextLine());
+            } while (durabilityClass < 1 || durabilityClass > 6);
+            this.durabilityClass = durabilityClass;
+        } catch (NumberFormatException e){
+            System.out.println(e.getMessage());
+        }
         this.isExplosive = true;
     }
 

@@ -17,6 +17,7 @@ public class StandardContainer extends Container {
         int length;
         int width;
         int height;
+        try{
         do {
             System.out.println("Write weight Brutto between 800 and 4000 kg");
              weightBrutto = Integer.parseInt(scanner.nextLine());
@@ -28,7 +29,6 @@ public class StandardContainer extends Container {
         }while(weightNetto < 600 || weightBrutto > weightNetto);
         this.weightNetto = weightNetto;
         this.tara = weightBrutto - weightNetto;
-        this.id = ThreadLocalRandom.current().nextInt(1, 100000 + 1);
         do{
             System.out.println("Write length between 8 and 20 m");
             length = Integer.parseInt(scanner.nextLine());
@@ -43,7 +43,11 @@ public class StandardContainer extends Container {
         System.out.println("Write height between 1 and 4 m");
          height = Integer.parseInt(scanner.nextLine());
         }while(height < 1 || height > 4);
-        this.height = height;
+        this.height = height;}
+        catch (NumberFormatException e){
+            System.out.println(e.getMessage());
+        }
+        this.id = ThreadLocalRandom.current().nextInt(1, 100000 + 1);
     }
 
 

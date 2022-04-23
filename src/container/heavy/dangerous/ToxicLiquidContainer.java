@@ -12,13 +12,17 @@ public class ToxicLiquidContainer extends HeavyContainer implements LiquidContai
     public ToxicLiquidContainer(Sender sender) {
         super(sender);
         int temperatureOfLiquid;
-        do {
-            System.out.println("Write temperature of liquid between -10 and 60 C");
-            temperatureOfLiquid = Integer.parseInt(scanner.nextLine());
-        } while (temperatureOfLiquid < -10 || temperatureOfLiquid > 60);
-        this.temperatureOfLiquid = temperatureOfLiquid;
-        System.out.println("Write type of liquid");
-        this.liquid = scanner.nextLine();
+        try {
+            do {
+                System.out.println("Write temperature of liquid between -10 and 60 C");
+                temperatureOfLiquid = Integer.parseInt(scanner.nextLine());
+            } while (temperatureOfLiquid < -10 || temperatureOfLiquid > 60);
+            this.temperatureOfLiquid = temperatureOfLiquid;
+            System.out.println("Write type of liquid");
+            this.liquid = scanner.nextLine();
+        } catch (NumberFormatException e){
+            System.out.println(e.getMessage());
+        }
         this.isToxicLiquid = true;
     }
 

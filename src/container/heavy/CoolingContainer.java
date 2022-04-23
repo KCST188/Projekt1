@@ -12,16 +12,20 @@ public class CoolingContainer extends HeavyContainer {
         super(sender);
         int temperatureInside;
         int voltage;
-        do {
-            System.out.println("Write temperature inside between -30 and 15 C");
-             temperatureInside = Integer.parseInt(scanner.nextLine());
-        }while(temperatureInside < -30 || temperatureInside > 15);
-        this.temperatureInside = temperatureInside;
-        do {
-            System.out.println("Write voltage between 1500 and 20 000 V");
-             voltage= Integer.parseInt(scanner.nextLine());
-        }while(voltage < 1500 || voltage > 20000);
-        this.voltage = voltage;
+        try {
+            do {
+                System.out.println("Write temperature inside between -30 and 15 C");
+                temperatureInside = Integer.parseInt(scanner.nextLine());
+            } while (temperatureInside < -30 || temperatureInside > 15);
+            this.temperatureInside = temperatureInside;
+            do {
+                System.out.println("Write voltage between 1500 and 20 000 V");
+                voltage = Integer.parseInt(scanner.nextLine());
+            } while (voltage < 1500 || voltage > 20000);
+            this.voltage = voltage;
+        } catch (NumberFormatException e){
+            System.out.println(e.getMessage());
+        }
     }
 
     public String toString() {
