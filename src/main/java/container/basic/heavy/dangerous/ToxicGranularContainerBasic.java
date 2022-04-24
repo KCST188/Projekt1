@@ -21,6 +21,6 @@ public class ToxicGranularContainerBasic extends HeavyContainerBasic {
         return "Id: " + id + "\nSender: " + sender.toString() + "Weight Brutto: " + weightBrutto + "\nWeight Netto: " + weightNetto
                 + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLength: " + length + "\nWidth: " + width
                 + "\nHeight: " + height + "\nContainer material: " + containerMaterial + "\nMax granular weight: "
-                + this.maxGranularWeight + "\nTime to utilization: " + timeToUtilization();
+                + this.maxGranularWeight + "\nDate Arrived: " + dateArrived + "\nTime to utilization: " + timeToUtilization();
     }
 }

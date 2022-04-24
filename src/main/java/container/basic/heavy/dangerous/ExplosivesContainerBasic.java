@@ -21,6 +21,6 @@ public class ExplosivesContainerBasic extends HeavyContainerBasic {
         return "Id: " + id + "\nSender: " + sender.toString() + "Weight Brutto: " + weightBrutto + "\nWeight Netto: " + weightNetto
                 + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLength: " + length + "\nWidth: " + width
                 + "\nHeight: " + height + "\nContainer material: " + containerMaterial + "\nDurability class "
-                + this.durabilityClass + "\nTime to utilization: " + timeToUtilization() + "\n";
+                + this.durabilityClass + "\nDate Arrived: " + dateArrived + "\nTime to utilization: " + timeToUtilization() + "\n";
     }
 }

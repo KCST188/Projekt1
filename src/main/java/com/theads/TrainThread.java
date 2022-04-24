@@ -1,4 +1,4 @@
-package magazine;
+package com.theads;
 
 import java.util.concurrent.TimeUnit;
 

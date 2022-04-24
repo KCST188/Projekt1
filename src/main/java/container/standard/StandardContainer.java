@@ -25,9 +25,9 @@ public class StandardContainer extends Container {
             } while (weightBrutto < 800 || weightBrutto > 4000);
             this.weightBrutto = weightBrutto;
             do {
-                System.out.println("Write weight Netto larger than 600 kg and smaller than weight Brutto");
+                System.out.println("Write weight Netto larger than 600 kg and smaller than weight Brutto: " + this.weightBrutto);
                 weightNetto = Integer.parseInt(scanner.nextLine());
-            } while (weightNetto < 600 || weightBrutto > weightNetto);
+            } while (weightNetto < 600 || this.weightBrutto < weightNetto);
             this.weightNetto = weightNetto;
             this.tara = weightBrutto - weightNetto;
             do {

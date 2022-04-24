@@ -1,5 +1,6 @@
 package magazine;
 
+import com.theads.TrainThread;
 import container.Container;
 import ship.ShipAbstract;
 import ship.ShipCount;

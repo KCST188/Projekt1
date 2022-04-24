@@ -25,6 +25,6 @@ public class ToxicLiquidContainerBasic extends HeavyContainerBasic implements Li
                 + "\nTara: " + tara + "\nDays in magazine: " + daysInMagazine + "\nLength: " + length + "\nWidth: " + width
                 + "\nHeight: " + height + "\nContainer material: " + containerMaterial + "\nTemperature of liquid: " + temperatureOfLiquid
                 + "C" + "\nType of liquid: " + this.liquid + "\nExternal material: " + externalMaterial
-                + "\nTime to utilization: " + timeToUtilization();
+                + "\nDate Arrived: " + dateArrived + "\nTime to utilization: " + timeToUtilization();
     }
 }

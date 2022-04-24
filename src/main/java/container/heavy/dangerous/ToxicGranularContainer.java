@@ -15,7 +15,7 @@ public class ToxicGranularContainer extends HeavyContainer {
         try {
             Scanner scanner = new Scanner(System.in);
             do {
-                System.out.println("Write max weight of granular between weight netto and 40% of that");
+                System.out.println("Write max weight of granular between weight netto: " + this.weightNetto + " and 40% of that: " + 0.4*this.weightNetto);
                 maxGranularWeight = Integer.parseInt(scanner.nextLine());
             } while (maxGranularWeight < 0.4 * weightNetto || maxGranularWeight > weightNetto);
             this.maxGranularWeight = maxGranularWeight;

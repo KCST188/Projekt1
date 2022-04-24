@@ -67,18 +67,20 @@ public class Magazine extends Port {
     }
 
     private void load(ShipAbstract ship, Container container) {
-        if (ship.maxAll <= ship.containerList.size()) System.out.println("Container too heavy");
-        else if (ship.maxWeight < ship.containerWeight) System.out.println("Too much containers in magazine");
+        if (ship.maxAll <= ship.containerList.size()) System.out.println("Too much containers in magazine");
+        else if (ship.maxWeight < ship.containerWeight) System.out.println("Container too heavy");
         else {
             ship.containerList.add(container);
             listOfContainers.remove(container);
             container.daysInMagazine = 0;
+            container.dateArrived = date;
         }
     }
 
     private void unload(ShipAbstract ship, Container container) {
         ship.containerList.remove(container);
         listOfContainers.add(container);
+        container.dateArrived = date;
     }
 
     public void loadOnShip(ShipCount shipCount) {
@@ -113,7 +115,6 @@ public class Magazine extends Port {
             System.out.println("This sender is banned, return container with id: " + container.id + " to sender.\n");
         else {
             unload(ship, container);
-            container.dateArrived = date;
         }
     }
 
