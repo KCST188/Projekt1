@@ -1,0 +1,64 @@
+{
+  "senders": [
+    {
+      "name": "Mike",
+      "surname": "Nowak",
+      "pesel": [
+        9,
+        7,
+        1,
+        2,
+        2,
+        3,
+        7,
+        5,
+        3,
+        4,
+        5
+      ],
+      "address": "London",
+      "banned": false,
+      "warning": 0
+    },
+    {
+      "name": "Andy",
+      "surname": "Jones",
+      "pesel": [
+        8,
+        7,
+        0,
+        5,
+        1,
+        2,
+        5,
+        3,
+        1,
+        7,
+        2
+      ],
+      "address": "Gdansk",
+      "banned": false,
+      "warning": 0
+    },
+    {
+      "name": "Clark",
+      "surname": "Kent",
+      "pesel": [
+        7,
+        5,
+        0,
+        8,
+        1,
+        7,
+        3,
+        9,
+        2,
+        4,
+        9
+      ],
+      "address": "New York",
+      "banned": false,
+      "warning": 0
+    }
+  ]
+}

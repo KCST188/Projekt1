@@ -1,0 +1,4 @@
+{
+  "maxContainerCount": 10,
+  "listOfContainers": []
+}

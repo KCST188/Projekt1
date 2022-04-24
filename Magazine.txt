@@ -1,0 +1,139 @@
+{
+  "maxWarnings": 2,
+  "date": {
+    "year": 2022,
+    "month": 4,
+    "day": 24
+  },
+  "maxContainerCount": 15,
+  "listOfContainers": [
+    {
+      "length": 12,
+      "width": 3,
+      "height": 2,
+      "id": 14738,
+      "sender": {
+        "name": "Mike",
+        "surname": "Nowak",
+        "pesel": [
+          9,
+          7,
+          1,
+          2,
+          2,
+          3,
+          7,
+          5,
+          3,
+          4,
+          5
+        ],
+        "address": "London",
+        "banned": false,
+        "warning": 0
+      },
+      "weightNetto": 750,
+      "weightBrutto": 900,
+      "tara": 150,
+      "daysInMagazine": 0,
+      "isDangerous": false,
+      "isExplosive": false,
+      "isToxicGranular": false,
+      "isToxicLiquid": false,
+      "isHeavy": false,
+      "isElectric": false,
+      "dateArrived": {
+        "year": 2022,
+        "month": 4,
+        "day": 24
+      }
+    },
+    {
+      "durabilityClass": 4,
+      "containerMaterial": "Harden Steel",
+      "length": 15,
+      "width": 3,
+      "height": 3,
+      "id": 7637,
+      "sender": {
+        "name": "Clark",
+        "surname": "Kent",
+        "pesel": [
+          7,
+          5,
+          0,
+          8,
+          1,
+          7,
+          3,
+          9,
+          2,
+          4,
+          9
+        ],
+        "address": "New York",
+        "banned": false,
+        "warning": 0
+      },
+      "weightNetto": 1000,
+      "weightBrutto": 1200,
+      "tara": 200,
+      "daysInMagazine": 0,
+      "isDangerous": false,
+      "isExplosive": true,
+      "isToxicGranular": false,
+      "isToxicLiquid": false,
+      "isHeavy": true,
+      "isElectric": false,
+      "dateArrived": {
+        "year": 2022,
+        "month": 4,
+        "day": 24
+      }
+    },
+    {
+      "temperatureInside": -5,
+      "voltage": 1800,
+      "containerMaterial": "Steel",
+      "length": 16,
+      "width": 4,
+      "height": 3,
+      "id": 39432,
+      "sender": {
+        "name": "Andy",
+        "surname": "Jones",
+        "pesel": [
+          8,
+          7,
+          0,
+          5,
+          1,
+          2,
+          5,
+          3,
+          1,
+          7,
+          2
+        ],
+        "address": "Gdansk",
+        "banned": false,
+        "warning": 0
+      },
+      "weightNetto": 1150,
+      "weightBrutto": 1300,
+      "tara": 150,
+      "daysInMagazine": 0,
+      "isDangerous": false,
+      "isExplosive": false,
+      "isToxicGranular": false,
+      "isToxicLiquid": false,
+      "isHeavy": true,
+      "isElectric": true,
+      "dateArrived": {
+        "year": 2022,
+        "month": 4,
+        "day": 24
+      }
+    }
+  ]
+}
